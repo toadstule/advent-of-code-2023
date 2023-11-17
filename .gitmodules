@@ -1,0 +1,3 @@
+[submodule "jib-aoc"]
+	path = jib-aoc
+	url = git@bitbucket.org:toadstule/jib-aoc.git

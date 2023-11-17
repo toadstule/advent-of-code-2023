@@ -1,5 +1,5 @@
 #anytree
-#gitpython
+gitpython
 #numpy
 #shapely
 
