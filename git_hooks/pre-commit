@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+PYTHONPATH="jib-aoc" /usr/bin/make check

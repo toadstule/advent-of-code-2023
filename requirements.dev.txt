@@ -1,0 +1,6 @@
+black
+mypy
+pydocstyle
+pylint
+pytest
+pytype
