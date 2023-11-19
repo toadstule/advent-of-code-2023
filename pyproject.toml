@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 99
+target-version = ["py311"]
+
+[tool.isort]
+line_length = 99
+multi_line_output = 3
+profile = "black"
+
+[tool.mypy]
+ignore_missing_imports = true
+implicit_reexport = true
+install_types = true
+non_interactive = true
+plugins = "numpy.typing.mypy_plugin"
+pretty = true
+python_version = "3.11"
+strict = true
+
+[tool.pylint.basic]
+good-names="i, j, k, w, x, y, z"
+
+[tool.pylint.design]
+max-attributes = 10
+min-public-methods = 1
+
+[tool.pylint.format]
+max-line-length = 99
+
+[tool.pylint.general]
+init-hook='import os, sys; sys.path.append(f"{os.getcwd()}/jib-aoc")'
+
+[tool.pylint.messages_control]
+disable = "R0801, W1203"
+
+[tool.pylint.similarities]
+ignore-imports = "yes"
