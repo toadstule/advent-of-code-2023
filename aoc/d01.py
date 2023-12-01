@@ -1,6 +1,6 @@
 """Advent of Code 2022 -- Day 1: Trebuchet?!.
 
-Reference: https://adventofcode.com/2022/day/1
+Reference: https://adventofcode.com/2023/day/1
 """
 from jibaoc import solver
 
