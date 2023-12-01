@@ -16,12 +16,12 @@ class D01(solver.Solver):
         """Return the sum of all the calibration values."""
         result: int = 0
         for line in self._calibration_doc:
-            digits: list[str] = [x for x in line if x.isdigit()]
-            result += int(digits[0]) * 10 + int(digits[-1])
+            digits: list[int] = [int(char) for char in line if char.isdigit()]
+            result += digits[0] * 10 + digits[-1]
         return result
 
     def part_two(self) -> int:
-        """Return the sum of all the calibration values."""
+        """Return the sum of all the calibration values; include text-represented digits."""
         text_digits: dict[int, str] = {
             1: "one",
             2: "two",
