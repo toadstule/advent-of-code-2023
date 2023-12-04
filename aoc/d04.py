@@ -29,8 +29,14 @@ class D04(solver.Solver):
             winners_txt, mine_txt = numbers_txt.split("|", 1)
             mine: set[int] = {int(x) for x in mine_txt.split()}
             winners: set[int] = {int(x) for x in winners_txt.split()}
+            matches: int = len(mine.intersection(winners))
             self._cards.append(
-                ScratchCard(number=card_number, matches=len(winners.intersection(mine)), count=1)
+                ScratchCard(
+                    number=card_number,
+                    matches=matches,
+                    count=1,
+                    offspring={card_number + i + 1 for i in range(matches)},
+                )
             )
 
     def part_one(self) -> int:
@@ -40,11 +46,6 @@ class D04(solver.Solver):
     def part_two(self) -> int:
         """Return the total number of scratchcards."""
         card_count: int = 0
-
-        # Generate the offspring for each card.
-        for card in self._cards:
-            card.offspring = {card.number + i + 1 for i in range(card.matches)}
-
         # Remove cards with no offspring, adding their count to any of their parent cards.
         while self._cards:
             for card in self._cards.copy():
